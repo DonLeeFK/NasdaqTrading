@@ -14,7 +14,7 @@ on:
       - '**.py'
   workflow_dispatch:  
 jobs:
-  merge:
+  update:
     #runs-on: ubuntu-latest
     runs-on: macos-13
 
@@ -30,7 +30,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run merge script
+      - name: Run LSTM Model
         run: python lstm.py 
 
 
