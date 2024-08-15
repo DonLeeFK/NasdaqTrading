@@ -1,6 +1,6 @@
 #torch
 numpy
-yfinance
+#yfinance
 #sklearn
 mathplotlib
 #mathplotlib.pyplot
