@@ -3,5 +3,5 @@ numpy
 yfinance
 sklearn
 mathplotlib
-mathplotlib.pyplot
-csv
+#mathplotlib.pyplot
+#csv
