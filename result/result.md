@@ -5,5 +5,5 @@
 | Kelly Strategy Total Return | 48.32% |
 | Buy and Hold Total Return | 21.67% |
 | Kelly Strategy Sharpe Ratio | 2.8371 |
-| Buy and Hold Sharpe Ratio | 1.3551 |
+| Buy and Hold Sharpe Ratio | 1.3668 |
 | Number of trades | 34 |
