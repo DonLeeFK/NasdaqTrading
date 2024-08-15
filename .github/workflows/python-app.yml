@@ -1,4 +1,4 @@
-name: Merge Script
+name: Update Script
 
 permissions:
   contents: write
