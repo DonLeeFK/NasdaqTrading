@@ -40,6 +40,9 @@ jobs:
 
       - name: Run LSTM Model
         run: python lstm.py 
+      
+      - name: CSV2MD
+        run: python utils/csv2md.py result/result.csv result/result.md
 
 
       - name: Commit Changes
