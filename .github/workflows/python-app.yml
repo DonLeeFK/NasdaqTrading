@@ -33,8 +33,7 @@ jobs:
       - name: Run merge script
         run: python lstm.py 
 
-#      - name: Run shadowrocket merge script
-#        run: python merge.py  
+
       - name: Commit Changes
         run: |
           if [[ -n "$(git status --porcelain)" ]]; then
@@ -48,43 +47,9 @@ jobs:
           else
             echo "No changes detected in the repository."
           fi
-      #- name: Trigger Update Script
-      #  uses: convictional/trigger-workflow-and-wait@v1.6.1
-      #  with:
-      #    owner: DonLeeFK
-      #    repo: OpenclashConfig
-      #    workflow_file_name: main.yml
-      #    github_token: ${{ secrets.ACTION_KEY}}
-      - name: Trigger Update
-        run: |
-          curl -L \
-            -X POST \
-            -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer ${{ secrets.ACTION_KEY }}" \
-            -H "X-GitHub-Api-Version: 2022-11-28" \
-            https://api.github.com/repos/DonLeeFK/OpenclashConfig/dispatches \
-            -d '{"event_type":"update-after"}'
+      
 
 
       
       
-      #- name: Convert
-      #  run: 
-      #    python3 convert.py
       
-      #- name: Commit convertion
-      #  run:
-      #    |
-      #    if [[ -n "$(git status --porcelain)" ]]; then
-      #      echo "Changes detected in the repository."
-      #      git config core.ignorecase false
-      #      git config --local user.email "actions@github.com"
-      #      git config --local user.name "GitHub Action"
-      #      git add .
-      #      git commit -m "Updated at $(date '+%m-%d-%Y %H:%M:%S')"
-      #      git push
-      #    else
-      #      echo "No changes detected in the repository."
-      #   fi
-      
-          
