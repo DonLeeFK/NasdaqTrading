@@ -2,7 +2,6 @@ torch
 numpy
 yfinance
 sklearn
-os
 mathplotlib
 mathplotlib.pyplot
 csv
