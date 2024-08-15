@@ -1,7 +1,7 @@
 torch
 numpy
 yfinance
-sklearn
-mathplotlib
-mathplotlib.pyplot
+scikit-learn
+matplotlib
+matplotlib.pyplot
 csv

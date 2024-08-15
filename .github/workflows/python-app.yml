@@ -34,7 +34,8 @@ jobs:
           pip install numpy
           pip install pandas
           pip install yfinance
-          pip install sklearn
+          pip install scikit-learn
+          pip install matplotlib
             
 
       - name: Run LSTM Model
