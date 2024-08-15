@@ -11,32 +11,10 @@ The benchmark below is derived from the outcomes observed from June 2, 2023, to 
 This result will be updated daily, enabling a clear distinction between the model's successes and failures, offering a transparent assessment of its performance over time. 
 ![result](result/result.png)
 ![result_table](result/result.csv)
-<table id="csv-table" border="1">
-        <!-- Table will be populated here -->
-    </table>
-
-    <script>
-        fetch('https://raw.githubusercontent.com/DonLeeFK/NasdaqTrading/main/result/result.csv')
-            .then(response => response.text())
-            .then(data => {
-                const rows = data.trim().split('\n');
-                const table = document.getElementById('csv-table');
-
-                rows.forEach(row => {
-                    const columns = row.split(',');
-                    const tr = document.createElement('tr');
-
-                    columns.forEach(column => {
-                        const td = document.createElement('td');
-                        td.textContent = column;
-                        tr.appendChild(td);
-                    });
-
-                    table.appendChild(tr);
-                });
-            })
-            .catch(error => console.error('Error fetching the CSV file:', error));
-    </script>
+```{r, echo=FALSE, warning=FALSE}
+library(flextable) #you can use another table library, if you want
+flextable(read.csv("result/result.csv"))
+```
 
 \
 You can download this graph at `result/result.png`. Note that in the graph, the "Buy and Hold" strategy refers to purchasing Nasdaq with the entire initial balance and retaining it over time. This strategy effectively reflects the performance of Nasdaq itself without any active trading or adjustments.
