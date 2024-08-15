@@ -1,7 +1,7 @@
-#torch
+torch
 numpy
-#yfinance
-#sklearn
+yfinance
+sklearn
 mathplotlib
-#mathplotlib.pyplot
-#csv
+mathplotlib.pyplot
+csv

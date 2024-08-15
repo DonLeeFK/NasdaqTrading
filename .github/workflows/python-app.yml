@@ -29,7 +29,7 @@ jobs:
 
       - name: Install dependencies
         #run: pip install -r requirements.txt
-        run: pip install torch
+        run: pip install torch numpy yfinance sklearn mathplotlib
 
       - name: Run LSTM Model
         run: python lstm.py 
