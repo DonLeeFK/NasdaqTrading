@@ -28,14 +28,14 @@ jobs:
           python-version: 3.11
 
       - name: Install dependencies
-        #run: pip install -r requirements.txt
-        run: |
-          pip install torch
-          pip install numpy
-          pip install pandas
-          pip install yfinance
-          pip install scikit-learn
-          pip install matplotlib
+        run: pip install -r requirements.txt
+        #run: |
+        #  pip install torch
+        #  pip install numpy
+        #  pip install pandas
+        #  pip install yfinance
+        #  pip install scikit-learn
+        #  pip install matplotlib
             
 
       - name: Run LSTM Model

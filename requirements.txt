@@ -3,5 +3,3 @@ numpy
 yfinance
 scikit-learn
 matplotlib
-matplotlib.pyplot
-csv
