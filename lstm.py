@@ -46,9 +46,9 @@ def create_sequences(data, seq_length):
     return np.array(xs), np.array(ys)
 
 # LSTM Model
-class NasdaqLSTM(nn.Module):
+class StockLSTM(nn.Module):
     def __init__(self, input_size, hidden_size, num_layers, output_size):
-        super(NasdaqLSTM, self).__init__()
+        super(StockLSTM, self).__init__()
         self.hidden_size = hidden_size
         self.num_layers = num_layers
         self.lstm = nn.LSTM(input_size, hidden_size, num_layers, batch_first=True)
@@ -348,7 +348,7 @@ if __name__ == "__main__":
         hidden_size = 64
         num_layers = 2
         output_size = 2
-        model = NasdaqLSTM(input_size, hidden_size, num_layers, output_size)
+        model = StockLSTM(input_size, hidden_size, num_layers, output_size)
         
         # Set up optimizer
         optimizer = optim.Adam(model.parameters(), lr=0.001)
@@ -382,7 +382,7 @@ if __name__ == "__main__":
         hidden_size = 64
         num_layers = 2
         output_size = 2
-        model = NasdaqLSTM(input_size, hidden_size, num_layers, output_size)
+        model = StockLSTM(input_size, hidden_size, num_layers, output_size)
         
         model_filename = "nasdaq_lstm_model.pth"
         model = load_model(model, model_filename)
