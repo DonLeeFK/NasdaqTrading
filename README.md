@@ -15,7 +15,7 @@ This result will be updated daily, enabling a clear distinction between the mode
 \
 You can download this graph at `result/result.png`. Note that in the graph, the "Buy and Hold" strategy refers to purchasing Nasdaq with the entire initial balance and retaining it over time. This strategy effectively reflects the performance of Nasdaq itself without any active trading or adjustments.
 \
-You can also download the trade record at `result/record.csv` for a detailed log of all trading activities. The record will be a day ahead of the actual trading day, allowing it to be used as a prediction or reference point for making informed decisions regarding future trading activities. But again, please exercise caution when actually investing with real money. Refer to the [disclaimer](#disclaimer) provided earlier and ensure that you make investment decisions responsibly and with full awareness of the risks involved.
+You can also download the trade record at `result/record.csv` for a detailed log of all trading activities. The record will be a day ahead of the actual trading day, allowing it to be used as a prediction or reference point for making informed decisions regarding future trading activities. Also you can check out `result/prediction.csv` for prediction of the day. But again, please exercise caution when actually investing with real money. Refer to the [disclaimer](#disclaimer) provided earlier and ensure that you make investment decisions responsibly and with full awareness of the risks involved.
 
 
 
