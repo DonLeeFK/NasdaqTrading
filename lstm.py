@@ -416,6 +416,9 @@ if __name__ == "__main__":
                 action, trade_ratio, cash_ratio, record= trader.trade(prob.item(), change.item())
                 records.append(record)
                 if i == len(X_trading) - 1:
+                    message = f"Action: {action}, Trade Ratio: {100*trade_ratio}%, Cash Ratio: {100*cash_ratio}%"
+                    with open("result/prediction.txt", "w") as file:
+                        file.write(message)
                     print(f"Action: {action}, Trade Ratio: {100*trade_ratio}%, Cash Ratio: {100*cash_ratio}%")
         
 
