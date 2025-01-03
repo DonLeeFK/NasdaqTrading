@@ -213,6 +213,7 @@ class KellyTrader:
         strategy_returns, stock_returns = self.calculate_daily_returns()
 
         # Calculate cumulative returns
+        strategy_returns = [item if isinstance(item, (int, float)) else item[0] for item in strategy_returns]
         cumulative_strategy_returns = np.cumprod(1 + np.array(strategy_returns)) - 1
         cumulative_stock_returns = np.cumprod(1 + stock_returns) - 1
 
