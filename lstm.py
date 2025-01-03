@@ -100,12 +100,20 @@ class KellyTrader:
             trade_amount = trade_amount.iloc[0]
         
         if trade_amount > 0:  # Buy
+            if isinstance(self.current_price, pd.Series):
+                self.current_price = self.current_price.iloc[0]
+
+            # Determine the shares to buy
             shares_to_buy = min(trade_amount / self.current_price, self.balance / self.current_price)
             cost = shares_to_buy * self.current_price
             self.balance -= cost
             self.portfolio += shares_to_buy
             action = 'buy'
         elif trade_amount < 0:  # Sell
+            if isinstance(self.current_price, pd.Series):
+                self.current_price = self.current_price.iloc[0]
+
+            # Determine the shares to sell
             shares_to_sell = min(-trade_amount / self.current_price, self.portfolio)
             proceeds = shares_to_sell * self.current_price
             self.balance += proceeds
