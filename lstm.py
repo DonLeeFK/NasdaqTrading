@@ -196,7 +196,7 @@ class KellyTrader:
         strategy_returns = []
         for i in range(1, len(self.portfolio_values)):
             # Ensure previous value is treated as a scalar before comparison
-            previous_value = self.portfolio_values[i-1]
+            previous_value = self.portfolio_values[i-1] if not isinstance(self.portfolio_values[i-1], pd.Series) else self.portfolio_values[i-1].iloc[0]
             
             if previous_value != 0:
                 daily_return = (self.portfolio_values[i] - previous_value) / previous_value
