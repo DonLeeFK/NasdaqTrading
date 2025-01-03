@@ -84,7 +84,14 @@ class KellyTrader:
         
         total_value = self.balance + self.portfolio * self.current_price
         current_stock_value = self.portfolio * self.current_price
-        current_stock_percentage = current_stock_value / total_value if total_value > 0 else 0
+        if isinstance(total_value, pd.Series):
+            current_stock_percentage = np.where(
+                total_value > 0,
+                current_stock_value / total_value,
+                0
+            )
+        else:
+            current_stock_percentage = current_stock_value / total_value if total_value > 0 else 0
         
         target_stock_value = kelly_fraction * total_value
         trade_amount = target_stock_value - current_stock_value
