@@ -95,6 +95,9 @@ class KellyTrader:
         
         target_stock_value = kelly_fraction * total_value
         trade_amount = target_stock_value - current_stock_value
+        if isinstance(trade_amount, pd.Series):
+            # Handle trade_amount as a series
+            trade_amount = trade_amount.iloc[0]
         
         if trade_amount > 0:  # Buy
             shares_to_buy = min(trade_amount / self.current_price, self.balance / self.current_price)
