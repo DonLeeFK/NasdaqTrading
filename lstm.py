@@ -130,7 +130,7 @@ class KellyTrader:
         total_portfolio_value = self.portfolio * current_price
         portfolio_value = self.portfolio_values[-1]  # Ensure we access the latest portfolio value correctly.
         portfolio_value = portfolio_value.iloc[0] if isinstance(portfolio_value, pd.Series) else portfolio_value
-        current_stock_percentage = current_stock_percentage.iloc[0] if isinstance(current_stock_percentage, pd.Series) else current_stock_percentage
+        current_stock_percentage = float(current_stock_percentage.iloc[0])
         trade_amount = abs(trade_amount.iloc[0] if isinstance(trade_amount, pd.Series) else trade_amount)
 
         # Handle potential NaN or negative stock percentage
@@ -142,14 +142,14 @@ class KellyTrader:
         print(f"  Total Value: ${portfolio_value:.2f}")
         print(f"  Probability: {probability}, Expected Change: {expected_change}")
         print(f"  Kelly Fraction: {kelly_fraction:.4f}")
-        print(f"  Current Stock Percentage: {current_stock_percentage}")
+        print(f"  Current Stock Percentage: {current_stock_percentage:.4f}")
         print(f"  Trade: {action.capitalize()} ${trade_amount:.2f}")
         print("--------------------")
         record = {
             'Day': len(self.portfolio_values) - 1,
             'Stock Price': f"${current_price:.2f}",
             'Balance': f"${balance:.2f}",
-            'Porfolio': f"${self.portfolio * self.current_price:.2f}",
+            'Porfolio': f"${total_portfolio_value}",
             'Total Value': f"${portfolio_value:.2f}",
             'Current Stock Percentage': f"{100*current_stock_percentage:.2f}%",
             'Trade Action': action.capitalize(),
