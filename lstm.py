@@ -133,6 +133,9 @@ class KellyTrader:
         current_stock_percentage = current_stock_percentage.iloc[0] if isinstance(current_stock_percentage, pd.Series) else current_stock_percentage
         trade_amount = abs(trade_amount.iloc[0] if isinstance(trade_amount, pd.Series) else trade_amount)
 
+        # Handle potential NaN or negative stock percentage
+        current_stock_percentage = 0 if pd.isna(current_stock_percentage) or current_stock_percentage < 0 else current_stock_percentage
+
         print(f"  Stock Price: ${current_price:.2f}")
         print(f"  Balance: ${balance:.2f}")
         print(f"  Portfolio: {self.portfolio:.4f} shares (${total_portfolio_value:.2f})")
