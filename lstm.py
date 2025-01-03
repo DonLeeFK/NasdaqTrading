@@ -143,7 +143,7 @@ class KellyTrader:
 
         # Handle potential NaN or negative stock percentage
         current_stock_percentage = 0 if pd.isna(current_stock_percentage) or current_stock_percentage < 0 else current_stock_percentage
-
+        """
         print(f"  Stock Price: ${current_price:.2f}")
         print(f"  Balance: ${balance:.2f}")
         print(f"  Portfolio: {self.portfolio:.4f} shares (${total_portfolio_value:.2f})")
@@ -153,6 +153,7 @@ class KellyTrader:
         print(f"  Current Stock Percentage: {current_stock_percentage:.4f}")
         print(f"  Trade: {action.capitalize()} ${trade_amount:.2f}")
         print("--------------------")
+        """
         record = {
             'Day': len(self.portfolio_values) - 1,
             'Stock Price': f"${current_price:.2f}",
