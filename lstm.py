@@ -195,10 +195,14 @@ class KellyTrader:
     def calculate_daily_returns(self):
         strategy_returns = []
         for i in range(1, len(self.portfolio_values)):
-            if self.portfolio_values[i-1] != 0:
-                daily_return = (self.portfolio_values[i] - self.portfolio_values[i-1]) / self.portfolio_values[i-1]
+            # Ensure previous value is treated as a scalar before comparison
+            previous_value = self.portfolio_values[i-1]
+            
+            if previous_value != 0:
+                daily_return = (self.portfolio_values[i] - previous_value) / previous_value
             else:
                 daily_return = 0  # Assume no return if previous value was 0
+                
             strategy_returns.append(daily_return)
 
         stock_returns = self.stock_data['Close'].pct_change().values[1:]  # Skip the first NaN
