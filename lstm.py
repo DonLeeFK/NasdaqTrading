@@ -142,13 +142,13 @@ class KellyTrader:
         print(f"  Total Value: ${portfolio_value:.2f}")
         print(f"  Probability: {probability}, Expected Change: {expected_change}")
         print(f"  Kelly Fraction: {kelly_fraction:.4f}")
-        print(f"  Current Stock Percentage: {current_stock_percentage:.4f}")
+        print(f"  Current Stock Percentage: {current_stock_percentage}")
         print(f"  Trade: {action.capitalize()} ${trade_amount:.2f}")
         print("--------------------")
         record = {
             'Day': len(self.portfolio_values) - 1,
-            'Stock Price': f"${self.current_price:.2f}",
-            'Balance': f"${self.balance:.2f}",
+            'Stock Price': f"${current_price:.2f}",
+            'Balance': f"${balance:.2f}",
             'Porfolio': f"${self.portfolio * self.current_price:.2f}",
             'Total Value': f"${portfolio_value:.2f}",
             'Current Stock Percentage': f"{100*current_stock_percentage:.2f}%",
