@@ -126,21 +126,22 @@ class KellyTrader:
         
         # Print daily information
         print(f"Day {len(self.portfolio_values) - 1}:")
-        print(f"  Stock Price: ${self.current_price:.2f}")
-        print(f"  Balance: ${self.balance:.2f}")
-        print(f"  Portfolio: {self.portfolio:.4f} shares (${self.portfolio * self.current_price:.2f})")
-        print(f"  Total Value: ${portfolio_value:.2f}")
+        current_price = self.current_price.iloc[0] if isinstance(self.current_price, pd.Series) else self.current_price
+        print(f"  Stock Price: ${current_price.iloc[0]:.2f}")
+        print(f"  Balance: ${self.balance.iloc[0]:.2f}")
+        print(f"  Portfolio: {self.portfolio.iloc[0]:.4f} shares (${self.portfolio.iloc[0] * self.current_price.iloc[0]:.2f})")
+        print(f"  Total Value: ${portfolio_value.iloc[0]:.2f}")
         print(f"  Probability: {probability}, Expected Change: {expected_change}")
         print(f"  Kelly Fraction: {kelly_fraction:.4f}")
         print(f"  Current Stock Percentage: {current_stock_percentage:.4f}")
         print(f"  Trade: {action.capitalize()} ${abs(trade_amount):.2f}")
         print("--------------------")
         record = {
-            'Day': len(self.portfolio_values) - 1,
-            'Stock Price': f"${self.current_price:.2f}",
-            'Balance': f"${self.balance:.2f}",
-            'Porfolio': f"${self.portfolio * self.current_price:.2f}",
-            'Total Value': f"${portfolio_value:.2f}",
+            'Day': len(self.portfolio_values.iloc[0]) - 1,
+            'Stock Price': f"${self.current_price.iloc[0]:.2f}",
+            'Balance': f"${self.balance.iloc[0]:.2f}",
+            'Porfolio': f"${self.portfolio.iloc[0] * self.current_price.iloc[0]:.2f}",
+            'Total Value': f"${portfolio_value.iloc[0]:.2f}",
             'Current Stock Percentage': f"{100*current_stock_percentage:.2f}%",
             'Trade Action': action.capitalize(),
             'Trade Amount': f"${abs(trade_amount):.2f}",
