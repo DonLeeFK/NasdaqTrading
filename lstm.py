@@ -242,12 +242,15 @@ class KellyTrader:
         plt.tight_layout()
         plt.savefig('result/result.png')
         #plt.show()
-
+        
+        portfolio_value = self.portfolio_values[-1]  # Ensure we access the latest portfolio value correctly.
+        portfolio_value = portfolio_value.iloc[0] if isinstance(portfolio_value, pd.Series) else portfolio_value
+        
         # Print summary statistics
         final_strategy_return = cumulative_strategy_returns[-1]
         final_stock_return = cumulative_stock_returns[-1]
         print(f"Initial Balance: ${self.portfolio_values[0]:.2f}")
-        print(f"Final Balance: ${self.portfolio_values[-1]:.2f}")
+        print(f"Final Balance: ${portfolio_value:.2f}")
         print(f"Kelly Strategy Total Return: {final_strategy_return:.2%}")
         print(f"Buy and Hold Total Return: {final_stock_return:.2%}")
         print(f"Kelly Strategy Sharpe Ratio: {kelly_sharpe:.4f}")
@@ -258,7 +261,7 @@ class KellyTrader:
         headers = ["Metric", "Value"]
         rows = [
             ["Initial Balance", f"${self.portfolio_values[0]:.2f}"],
-            ["Final Balance", f"${self.portfolio_values[-1]:.2f}"],
+            ["Final Balance", f"${portfolio_value:.2f}"],
             ["Kelly Strategy Total Return", f"{final_strategy_return:.2%}"],
             ["Buy and Hold Total Return", f"{final_stock_return:.2%}"],
             ["Kelly Strategy Sharpe Ratio", f"{kelly_sharpe:.4f}"],
