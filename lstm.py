@@ -130,7 +130,7 @@ class KellyTrader:
         total_portfolio_value = self.portfolio * current_price
         portfolio_value = self.portfolio_values[-1]  # Ensure we access the latest portfolio value correctly.
         portfolio_value = portfolio_value.iloc[0] if isinstance(portfolio_value, pd.Series) else portfolio_value
-        current_stock_percentage = float(current_stock_percentage.iloc[0])
+        current_stock_percentage = float(current_stock_percentage.iloc[0]) if isinstance(current_stock_percentage, pd.Series) else float(current_stock_percentage)
         trade_amount = abs(trade_amount.iloc[0] if isinstance(trade_amount, pd.Series) else trade_amount)
 
         # Handle potential NaN or negative stock percentage
