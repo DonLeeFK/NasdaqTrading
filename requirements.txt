@@ -4,3 +4,4 @@ torch==2.2.2
 yfinance
 scikit-learn
 matplotlib
+Pillow

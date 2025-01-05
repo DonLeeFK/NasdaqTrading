@@ -10,7 +10,7 @@ The model first predicts the likelihood of Nasdaq's upward movement and the exte
 The benchmark below is derived from the outcomes observed from June 2, 2023, to the present day, providing a comparative analysis of the model's performance during this period. The initial balance is set at 1 million dollars; however, the specific amount is not crucial in assessing the model's comparative performance and effectiveness, it's just there for convenience. 
 This result will be updated daily, enabling a clear distinction between the model's successes and failures, offering a transparent assessment of its performance over time. 
 ![result](result/result.png)
-![result_table](result/result.md)
+![result_table](result/table.png)
 You can download this graph at `result/result.png`. Note that in the graph, the "Buy and Hold" strategy refers to purchasing Nasdaq with the entire initial balance and retaining it over time. So it effectively reflects the performance of Nasdaq itself without any active trading or adjustments.
 
 ### More utilities

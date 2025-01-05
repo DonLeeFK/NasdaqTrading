@@ -43,6 +43,8 @@ jobs:
       
       - name: CSV2MD
         run: python utils/csv2md.py result/result.csv result/result.md
+      - name: CSV2PNG
+        run: python utils/csv2png.py result/result.csv result/table.png
 
 
       - name: Commit Changes
