@@ -1,9 +1,9 @@
 | Metric | Value |
 | --- | --- |
 | Initial Balance | $1000000.00 |
-| Final Balance | $1734042.98 |
-| Kelly Strategy Total Return | 73.40% |
-| Buy and Hold Total Return | 41.35% |
-| Kelly Strategy Sharpe Ratio | 2.4891 |
-| Buy and Hold Sharpe Ratio | 1.4063 |
-| Number of trades | 37 |
+| Final Balance | $1750526.92 |
+| Kelly Strategy Total Return | 75.05% |
+| Buy and Hold Total Return | 41.27% |
+| Kelly Strategy Sharpe Ratio | 2.5247 |
+| Buy and Hold Sharpe Ratio | 1.4526 |
+| Number of trades | 42 |
