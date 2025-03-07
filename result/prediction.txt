@@ -1,1 +1,1 @@
-Action: Sell, Trade Ratio: 100.0%, Cash Ratio: 100.0%
+Action: Buy, Trade Ratio: 100.0%, Cash Ratio: 0.0%
