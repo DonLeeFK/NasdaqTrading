@@ -1,1 +1,1 @@
-Action: Sell, Trade Ratio: 1.488052227729214e-14%, Cash Ratio: 100.0%
+Action: Hold, Trade Ratio: 0.0%, Cash Ratio: 100.0%
